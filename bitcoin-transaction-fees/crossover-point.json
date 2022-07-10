@@ -1,0 +1,34 @@
+{
+  "kind": "fb",
+  "name": "Crossover Point",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "Daily %MC Transaction Fees [120d SMA]",
+              "code": "sma((BTC.FeeTotNtv/BTC.SplyCur), 120)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "Daily %MC Block Rewards [120d SMA]",
+              "code": "sma((BTC.IssContNtv/BTC.SplyCur), 120)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
