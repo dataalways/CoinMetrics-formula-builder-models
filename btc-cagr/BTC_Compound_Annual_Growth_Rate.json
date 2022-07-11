@@ -1,0 +1,44 @@
+{
+  "kind": "fb",
+  "name": "BTC Compound Annual Growth Rate",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1407974400000,
+          1656547200000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "(BTC 4Y-CAGR + 1) [LHS] ",
+              "code": "pow(BTC.PriceUSD/BTC.PriceUSD.shift(1460), 0.25)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC / USD [RHS]",
+              "code": "BTC.PriceUSD",
+              "color": "#4363d8",
+              "displayMode": "right"
+            },
+            {
+              "name": "1 ==  No Appreciation [LHS]",
+              "code": "BTC.PriceBTC",
+              "color": "#90a4ad",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
