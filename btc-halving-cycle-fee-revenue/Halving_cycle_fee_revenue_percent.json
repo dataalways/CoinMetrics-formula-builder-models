@@ -1,0 +1,38 @@
+{
+  "kind": "fb",
+  "name": "Halving cycle fee revenue percent",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1309046400000,
+          1657324800000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "Miner Revenue From Fees (4Y SMA) [LHS]",
+              "code": "sma(BTC.FeeTotNtv/BTC.IssContNtv, 1460)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "Daily Issuance (7D SMA) [RHS]",
+              "code": "sma(BTC.IssContNtv, 7)",
+              "color": "#4363d8",
+              "displayMode": "right"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
