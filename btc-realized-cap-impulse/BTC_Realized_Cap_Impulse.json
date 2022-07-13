@@ -1,0 +1,44 @@
+{
+  "kind": "fb",
+  "name": "BTC: Realized Cap Impulse",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1612656000000,
+          1657584000000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "30D RC Impulse [LHS]",
+              "code": "BTC.CapRealUSD- sma(BTC.CapRealUSD,30)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "90D RC Impulse [LHS]",
+              "code": "BTC.CapRealUSD- sma(BTC.CapRealUSD,90)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC / USD [RHS]",
+              "code": "BTC.PriceUSD",
+              "color": "#4363d8",
+              "displayMode": "right"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
