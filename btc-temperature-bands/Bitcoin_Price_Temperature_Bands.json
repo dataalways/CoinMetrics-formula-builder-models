@@ -1,0 +1,62 @@
+{
+  "kind": "fb",
+  "name": "Bitcoin Price Temperature Bands",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1343520000000,
+          1657584000000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "BTC / USD",
+              "code": "BTC.PriceUSD",
+              "color": "#795547",
+              "displayMode": "left"
+            },
+            {
+              "name": "BPT-0",
+              "code": "sma(BTC.PriceUSD, 1460)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "BPT-1",
+              "code": "sma(BTC.PriceUSD, 1460) + rollingStandardDeviation(BTC.PriceUSD, 1460)*1",
+              "color": "#25c6da",
+              "displayMode": "left"
+            },
+            {
+              "name": "BPT-2",
+              "code": "sma(BTC.PriceUSD, 1460) + rollingStandardDeviation(BTC.PriceUSD, 1460)*2",
+              "color": "#3939ac",
+              "displayMode": "left"
+            },
+            {
+              "name": "BPT-4",
+              "code": "sma(BTC.PriceUSD, 1460) + rollingStandardDeviation(BTC.PriceUSD, 1460)*4",
+              "color": "#e8601c",
+              "displayMode": "left"
+            },
+            {
+              "name": "BPT-8",
+              "code": "sma(BTC.PriceUSD, 1460) + rollingStandardDeviation(BTC.PriceUSD, 1460)*8",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
