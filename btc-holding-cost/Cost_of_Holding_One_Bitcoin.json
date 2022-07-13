@@ -1,0 +1,28 @@
+{
+  "kind": "fb",
+  "name": "Cost of Holding One Bitcoin",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "Trailing 12-Month Cost per Bitcoin [USD]",
+              "code": "sma(BTC.IssTotNtv/BTC.SplyCur*BTC.PriceUSD, 365)*365",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
