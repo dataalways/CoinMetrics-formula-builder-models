@@ -1,0 +1,32 @@
+{
+  "kind": "fb",
+  "name": "BTC: Exchange Balance",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1322524800000,
+          1657584000000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "Exchange Balance",
+              "code": "runningTotal(BTC.FlowInExNtv-BTC.FlowOutExNtv)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
