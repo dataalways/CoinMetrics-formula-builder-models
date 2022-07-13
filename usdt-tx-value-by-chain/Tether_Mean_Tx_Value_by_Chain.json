@@ -1,0 +1,38 @@
+{
+  "kind": "fb",
+  "name": "Tether Mean Tx Value by Chain",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1603324800000,
+          1657584000000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "USDT_ETH Mean Tx Value",
+              "code": "sma(USDT_ETH.TxTfrValAdjNtv/USDT_ETH.TxTfrCnt, 30)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "USDT_TRX Mean Tx Value",
+              "code": "sma(USDT_TRX.TxTfrValAdjNtv/USDT_TRX.TxTfrCnt, 30)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
