@@ -1,0 +1,28 @@
+{
+  "kind": "fb",
+  "name": "BTC: 2021 Cumulative transaction fees",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "stack",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "BTC Cumulative Transaction Fees [USD]",
+              "code": "(runningTotal(BTC.FeeTotUSD).slice(date(2021,1,1), date(2022,1,1))-runningTotal(BTC.FeeTotUSD).at(date(2021,1,1)))/(1.018733*pow(10,9))",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

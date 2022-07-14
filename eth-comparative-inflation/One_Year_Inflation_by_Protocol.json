@@ -1,0 +1,44 @@
+{
+  "kind": "fb",
+  "name": "One Year Inflation by Protocol",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1471478400000,
+          1662681600000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "Bitcoin",
+              "code": "(BTC.SplyCur - BTC.SplyCur.shift(365))/BTC.SplyCur.shift(365).slice(BTC.SplyCur.start,BTC.SplyCur.end)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "Ethereum",
+              "code": "(ETH.SplyCur - ETH.SplyCur.shift(365))/ETH.SplyCur.shift(365).slice(ETH.SplyCur.start,ETH.SplyCur.end)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "legend-entry",
+              "code": "drawSeries(BTC.PriceBTC - 1, \" \", \"#ffffff\", \"left\")",
+              "color": "#9c28b1",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
