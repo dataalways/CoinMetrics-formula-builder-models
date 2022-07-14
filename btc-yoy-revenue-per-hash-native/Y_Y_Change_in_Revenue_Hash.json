@@ -1,0 +1,28 @@
+{
+  "kind": "fb",
+  "name": "Y/Y Change in Revenue/Hash",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "365d Change in Rev/Hash [BTC denominated]",
+              "code": "(BTC.RevNtv/BTC.HashRate)/((BTC.RevNtv.shift(365))/BTC.HashRate.shift(365))\n.slice(BTC.RevNtv.start, BTC.RevNtv.end) - 1",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

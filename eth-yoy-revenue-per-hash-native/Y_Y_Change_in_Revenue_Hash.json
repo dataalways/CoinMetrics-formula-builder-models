@@ -1,0 +1,28 @@
+{
+  "kind": "fb",
+  "name": "Y/Y Change in Revenue/Hash",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "365d Change in Rev/Hash [ETH denominated]",
+              "code": "(ETH.RevNtv/ETH.HashRate)/((ETH.RevNtv.shift(365))/ETH.HashRate.shift(365))\n.slice(ETH.RevNtv.start, ETH.RevNtv.end) - 1",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
