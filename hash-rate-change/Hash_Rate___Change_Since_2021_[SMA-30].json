@@ -1,0 +1,40 @@
+{
+  "kind": "fb",
+  "name": "Hash Rate % Change Since 2021 [SMA-30]",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "BTC",
+              "code": "sma((BTC.HashRate/BTC.HashRate.at(date(2021,1,1))*100), 30).slice(date(2021,1,1),BTC.HashRate.end)",
+              "color": "#019688",
+              "displayMode": "left"
+            },
+            {
+              "name": "ETH",
+              "code": "sma((ETH.HashRate/ETH.HashRate.at(date(2021,1,1))*100), 30).slice(date(2021,1,1),ETH.HashRate.end)",
+              "color": "#e8601c",
+              "displayMode": "left"
+            },
+            {
+              "name": "LTC",
+              "code": "sma((LTC.HashRate/LTC.HashRate.at(date(2021,1,1))*100), 30).slice(date(2021,1,1),LTC.HashRate.end)",
+              "color": "#b869c5",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

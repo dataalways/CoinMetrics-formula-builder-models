@@ -1,0 +1,68 @@
+{
+  "kind": "fb",
+  "name": "BTC: Distribution by Wallet Size",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "stack",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1238198400000,
+          1657584000000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "BTC / USD Denominated Closing Price",
+              "code": "BTC.PriceUSD",
+              "color": "#e6194b",
+              "displayMode": "right"
+            },
+            {
+              "name": "Supply 0.001 to 0.01 BTC",
+              "code": "(BTC.metric(\"SplyAdrBalNtv0.001\")-BTC.metric(\"SplyAdrBalNtv0.01\"))/BTC.SplyCur",
+              "color": "#9c28b1",
+              "displayMode": "left"
+            },
+            {
+              "name": "Supply 0.01 to 0.1 BTC",
+              "code": "(BTC.metric(\"SplyAdrBalNtv0.01\")-BTC.metric(\"SplyAdrBalNtv0.1\"))/BTC.SplyCur",
+              "color": "#25c6da",
+              "displayMode": "left"
+            },
+            {
+              "name": "Supply 0.1 to 1 BTC",
+              "code": "(BTC.metric(\"SplyAdrBalNtv0.1\")-BTC.metric(\"SplyAdrBalNtv1\"))/BTC.SplyCur",
+              "color": "#f032e6",
+              "displayMode": "left"
+            },
+            {
+              "name": "Supply 1 to 10 BTC",
+              "code": "(BTC.metric(\"SplyAdrBalNtv1\")-BTC.metric(\"SplyAdrBalNtv10\"))/BTC.SplyCur",
+              "color": "#bfef45",
+              "displayMode": "left"
+            },
+            {
+              "name": "Supply 10 to 100 BTC",
+              "code": "(BTC.metric(\"SplyAdrBalNtv10\")-BTC.metric(\"SplyAdrBalNtv100\"))/BTC.SplyCur",
+              "color": "#ff8b7f",
+              "displayMode": "left"
+            },
+            {
+              "name": "Supply > 100 BTC",
+              "code": "(BTC.metric(\"SplyAdrBalNtv100\"))/BTC.SplyCur",
+              "color": "#ffe119",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
