@@ -1,0 +1,34 @@
+{
+  "kind": "fb",
+  "name": "Ethereum: EIP-1559 Token Burning",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "Daily New Issuance",
+              "code": "ETH.IssContNtv.slice(date(2021,08,01), ETH.IssContNtv.end)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "Daily Token Burn",
+              "code": "(ETH.IssContNtv - (ETH.SplyCur - ETH.SplyCur.shift(1))).slice(date(2021,08,01), ETH.IssContNtv.end)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
