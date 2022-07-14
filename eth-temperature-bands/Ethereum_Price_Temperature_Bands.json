@@ -1,0 +1,62 @@
+{
+  "kind": "fb",
+  "name": "Ethereum Price Temperature Bands",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1524355200000,
+          1657670400000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "ETH/USD",
+              "code": "drawSeries(ETH.PriceUSD, \"eth usd\", \"black\", \"left\")",
+              "color": "#795547",
+              "displayMode": "left"
+            },
+            {
+              "name": "EPT-0",
+              "code": "sma(ETH.PriceUSD, 1460)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "EPT-1",
+              "code": "sma(ETH.PriceUSD, 1460) + rollingStandardDeviation(ETH.PriceUSD, 1460)*1",
+              "color": "#25c6da",
+              "displayMode": "left"
+            },
+            {
+              "name": "EPT-2",
+              "code": "sma(ETH.PriceUSD, 1460) + rollingStandardDeviation(ETH.PriceUSD, 1460)*2",
+              "color": "#3939ac",
+              "displayMode": "left"
+            },
+            {
+              "name": "EPT-4",
+              "code": "sma(ETH.PriceUSD, 1460) + rollingStandardDeviation(ETH.PriceUSD, 1460)*4",
+              "color": "#e8601c",
+              "displayMode": "left"
+            },
+            {
+              "name": "EPT-8",
+              "code": "sma(ETH.PriceUSD, 1460) + rollingStandardDeviation(ETH.PriceUSD, 1460)*8",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
