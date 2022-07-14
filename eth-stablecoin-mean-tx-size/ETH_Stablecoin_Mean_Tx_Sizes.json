@@ -1,0 +1,44 @@
+{
+  "kind": "fb",
+  "name": "ETH Stablecoin Mean Tx Sizes",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1598313600000,
+          1657670400000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "USDT_ETH Mean Tx Value",
+              "code": "sma(USDT_ETH.TxTfrValAdjNtv/USDT_ETH.TxTfrCnt, 30)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "DAI Mean Tx Value",
+              "code": "sma(DAI.TxTfrValAdjNtv/DAI.TxTfrCnt, 30)",
+              "color": "#9c28b1",
+              "displayMode": "left"
+            },
+            {
+              "name": "USDC Mean Tx Value",
+              "code": "sma(USDC.TxTfrValAdjNtv/USDC.TxTfrCnt, 30)",
+              "color": "#25c6da",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
