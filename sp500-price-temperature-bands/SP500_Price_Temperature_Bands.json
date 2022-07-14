@@ -1,0 +1,62 @@
+{
+  "kind": "fb",
+  "name": "SP500 Price Temperature Bands",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1466899200000,
+          1657756800000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "BTC / USD",
+              "code": "SP500.ReferenceRateNewYork0400pm",
+              "color": "#795547",
+              "displayMode": "left"
+            },
+            {
+              "name": "SPT-0.5",
+              "code": "sma(SP500.ReferenceRateNewYork0400pm, 1460) + rollingStandardDeviation(SP500.ReferenceRateNewYork0400pm, 1460)*0.5",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "SPT-0.75",
+              "code": "sma(SP500.ReferenceRateNewYork0400pm, 1460) + rollingStandardDeviation(SP500.ReferenceRateNewYork0400pm, 1460)*0.75",
+              "color": "#25c6da",
+              "displayMode": "left"
+            },
+            {
+              "name": "SPT-1",
+              "code": "sma(SP500.ReferenceRateNewYork0400pm, 1460) + rollingStandardDeviation(SP500.ReferenceRateNewYork0400pm, 1460)*1",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "SPT-1.25",
+              "code": "sma(SP500.ReferenceRateNewYork0400pm, 1460) + rollingStandardDeviation(SP500.ReferenceRateNewYork0400pm, 1460)*1.25",
+              "color": "#e8601c",
+              "displayMode": "left"
+            },
+            {
+              "name": "SPT-1.5",
+              "code": "sma(SP500.ReferenceRateNewYork0400pm, 1460) + rollingStandardDeviation(SP500.ReferenceRateNewYork0400pm, 1460)*1.5",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
