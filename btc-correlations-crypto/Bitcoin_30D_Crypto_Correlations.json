@@ -1,0 +1,68 @@
+{
+  "kind": "fb",
+  "name": "Bitcoin 30D Crypto Correlations",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1614211200000,
+          1645833600000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "BTC/ETH",
+              "code": "rollingPearsonCorrelation(BTC.ReferenceRateNewYork0400pm, ETH.ReferenceRateNewYork0400pm, 30)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC/ADA",
+              "code": "rollingPearsonCorrelation(BTC.ReferenceRateNewYork0400pm, ADA.ReferenceRateNewYork0400pm, 30)",
+              "color": "#f032e6",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC/SOL",
+              "code": "rollingPearsonCorrelation(BTC.ReferenceRateNewYork0400pm, CMBISOL.ReferenceRateNewYork0400pm, 30)",
+              "color": "#25c6da",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC/XRP",
+              "code": "rollingPearsonCorrelation(BTC.ReferenceRateNewYork0400pm, XRP.ReferenceRateNewYork0400pm, 30)",
+              "color": "#ff8b7f",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC/DOGE",
+              "code": "rollingPearsonCorrelation(BTC.ReferenceRateNewYork0400pm, DOGE.ReferenceRateNewYork0400pm, 30)",
+              "color": "#e8601c",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC/DOT",
+              "code": "rollingPearsonCorrelation(BTC.ReferenceRateNewYork0400pm, DOT.ReferenceRateNewYork0400pm, 30)",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC/LINK",
+              "code": "rollingPearsonCorrelation(BTC.ReferenceRateNewYork0400pm, LINK.ReferenceRateNewYork0400pm, 30)",
+              "color": "#019688",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

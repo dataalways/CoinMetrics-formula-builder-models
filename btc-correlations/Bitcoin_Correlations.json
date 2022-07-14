@@ -1,0 +1,38 @@
+{
+  "kind": "fb",
+  "name": "Bitcoin Correlations",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1618012800000,
+          1657670400000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "BTC/SPX 30D ",
+              "code": "rollingPearsonCorrelation(BTC.ReferenceRateNewYork0400pm, SP500.ReferenceRateNewYork0400pm, 30)",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC/ETH 30D ",
+              "code": "rollingPearsonCorrelation(BTC.ReferenceRateNewYork0400pm, ETH.ReferenceRateNewYork0400pm, 30)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
