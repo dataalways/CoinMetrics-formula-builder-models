@@ -1,0 +1,62 @@
+{
+  "kind": "fb",
+  "name": "Ripple Price Temperature Bands",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1484956800000,
+          1657670400000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "XRP / USD",
+              "code": "XRP.PriceUSD",
+              "color": "#795547",
+              "displayMode": "left"
+            },
+            {
+              "name": "XPT-0",
+              "code": "sma(XRP.PriceUSD, 1460)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "XPT-1",
+              "code": "sma(XRP.PriceUSD, 1460) + rollingStandardDeviation(XRP.PriceUSD, 1460)*1",
+              "color": "#25c6da",
+              "displayMode": "left"
+            },
+            {
+              "name": "XPT-2",
+              "code": "sma(XRP.PriceUSD, 1460) + rollingStandardDeviation(XRP.PriceUSD, 1460)*2",
+              "color": "#3939ac",
+              "displayMode": "left"
+            },
+            {
+              "name": "XPT-4",
+              "code": "sma(XRP.PriceUSD, 1460) + rollingStandardDeviation(XRP.PriceUSD, 1460)*4",
+              "color": "#e8601c",
+              "displayMode": "left"
+            },
+            {
+              "name": "XPT-8",
+              "code": "sma(XRP.PriceUSD, 1460) + rollingStandardDeviation(XRP.PriceUSD, 1460)*8",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

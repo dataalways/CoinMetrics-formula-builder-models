@@ -1,0 +1,62 @@
+{
+  "kind": "fb",
+  "name": "Litecoin Price Temperature Bands",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1480636800000,
+          1657670400000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "LTC / USD",
+              "code": "LTC.PriceUSD",
+              "color": "#795547",
+              "displayMode": "left"
+            },
+            {
+              "name": "LPT-0",
+              "code": "sma(LTC.PriceUSD, 1460)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "LPT-1",
+              "code": "sma(LTC.PriceUSD, 1460) + rollingStandardDeviation(LTC.PriceUSD, 1460)*1",
+              "color": "#25c6da",
+              "displayMode": "left"
+            },
+            {
+              "name": "LPT-2",
+              "code": "sma(LTC.PriceUSD, 1460) + rollingStandardDeviation(LTC.PriceUSD, 1460)*2",
+              "color": "#3939ac",
+              "displayMode": "left"
+            },
+            {
+              "name": "LPT-4",
+              "code": "sma(LTC.PriceUSD, 1460) + rollingStandardDeviation(LTC.PriceUSD, 1460)*4",
+              "color": "#e8601c",
+              "displayMode": "left"
+            },
+            {
+              "name": "LPT-8",
+              "code": "sma(LTC.PriceUSD, 1460) + rollingStandardDeviation(LTC.PriceUSD, 1460)*8",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
