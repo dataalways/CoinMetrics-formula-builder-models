@@ -12,15 +12,15 @@
         "movingAvg": 0,
         "interpolationType": 0,
         "zoomRange": [
-          1407974400000,
-          1656547200000
+          1396396800000,
+          1657756800000
         ],
         "data": {
           "type": "formula",
           "initialData": [
             {
               "name": "(BTC 4Y-CAGR + 1) [LHS] ",
-              "code": "pow(BTC.PriceUSD/BTC.PriceUSD.shift(1460), 0.25)",
+              "code": "pow(BTC.PriceUSD/BTC.PriceUSD.shift(1460), 0.25).slice(BTC.PriceUSD.start+1460, BTC.PriceUSD.end)",
               "color": "#e6194b",
               "displayMode": "left"
             },
