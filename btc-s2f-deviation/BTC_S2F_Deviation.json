@@ -1,0 +1,62 @@
+{
+  "kind": "fb",
+  "name": "BTC: S2F Deviation",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1283126400000,
+          1657756800000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "s2f",
+              "code": "0.1588174261*pow((BTC.SplyCur/(365*sma(BTC.IssContNtv,14))), 3.36)",
+              "color": "#e6194b",
+              "displayMode": "none"
+            },
+            {
+              "name": "ratio",
+              "code": "BTC.PriceUSD/s2f",
+              "color": "#4363d8",
+              "displayMode": "none"
+            },
+            {
+              "name": "S2F > Price",
+              "code": "ratio.map(fn(date, ratio) (if ratio < 1 then ratio else 1))",
+              "color": "#ff8b7f",
+              "displayMode": "left"
+            },
+            {
+              "name": "S2F < Price",
+              "code": "ratio.map(fn(date, ratio) (if ratio > 1 then ratio else 1))",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "high boundary",
+              "code": "drawSeries(40*BTC.PriceBTC, \" \", \"white\", \"left\")",
+              "color": "#90a4ad",
+              "displayMode": "left"
+            },
+            {
+              "name": "low boundary",
+              "code": "drawSeries(0.025*BTC.PriceBTC, \" \", \"white\", \"left\")",
+              "color": "#019688",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

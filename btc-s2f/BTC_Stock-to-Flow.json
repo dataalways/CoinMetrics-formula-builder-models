@@ -1,0 +1,38 @@
+{
+  "kind": "fb",
+  "name": "BTC: Stock-to-Flow",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1263254400000,
+          1657756800000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "Stock-To-Flow",
+              "code": "0.1588174261*pow((BTC.SplyCur/(365*sma(BTC.IssContNtv,14))), 3.36)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC / USD",
+              "code": "BTC.PriceUSD",
+              "color": "#4363d8",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
