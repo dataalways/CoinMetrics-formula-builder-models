@@ -12,14 +12,14 @@
         "movingAvg": 0,
         "interpolationType": 0,
         "zoomRange": [
-          1466899200000,
+          1444262400000,
           1657756800000
         ],
         "data": {
           "type": "formula",
           "initialData": [
             {
-              "name": "BTC / USD",
+              "name": "SP500 / USD",
               "code": "SP500.ReferenceRateNewYork0400pm",
               "color": "#795547",
               "displayMode": "left"
