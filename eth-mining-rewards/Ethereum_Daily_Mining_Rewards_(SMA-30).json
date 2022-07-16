@@ -1,0 +1,46 @@
+{
+  "kind": "fb",
+  "name": "Ethereum:  Daily Mining Rewards (SMA-30)",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "stack",
+        "movingAvg": 30,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "dSupply",
+              "code": "(ETH.SplyCur - ETH.SplyCur.shift(1))",
+              "color": "#4363d8",
+              "displayMode": "none"
+            },
+            {
+              "name": "eip1559",
+              "code": "(ETH.IssContNtv - dSupply).slice(date(2020,8,1), ETH.IssContNtv.end)",
+              "color": "#25c6da",
+              "displayMode": "none"
+            },
+            {
+              "name": "Mining Rewards",
+              "code": "ETH.IssContNtv + ETH.FeeTotNtv - eip1559",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "Burned Tokens",
+              "code": "eip1559",
+              "color": "#e8601c",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "fb",
+  "name": "Ethereum: Tx Fee vs Price",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1462752000000,
+          1657843200000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "(30d SMA) Mean Tx Fee USD [LHS]",
+              "code": "sma(ETH.FeeMeanUSD,30)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "ETH / USD [RHS]",
+              "code": "ETH.PriceUSD",
+              "color": "#e6194b",
+              "displayMode": "right"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
