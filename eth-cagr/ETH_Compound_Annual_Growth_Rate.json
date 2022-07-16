@@ -1,0 +1,44 @@
+{
+  "kind": "fb",
+  "name": "ETH Compound Annual Growth Rate",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1563148800000,
+          1657756800000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "(ETH 4Y-CAGR + 1) [LHS] ",
+              "code": "pow(ETH.PriceUSD/ETH.PriceUSD.shift(1460), 0.25).slice(ETH.PriceUSD.start+1460, ETH.PriceUSD.end)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "ETH / USD [RHS]",
+              "code": "ETH.PriceUSD",
+              "color": "#4363d8",
+              "displayMode": "right"
+            },
+            {
+              "name": "1 ==  No Appreciation [LHS]",
+              "code": "BTC.PriceBTC",
+              "color": "#90a4ad",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

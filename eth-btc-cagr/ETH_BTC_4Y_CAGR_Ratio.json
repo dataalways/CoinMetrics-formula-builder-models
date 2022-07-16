@@ -1,0 +1,46 @@
+{
+  "kind": "fb",
+  "name": "ETH/BTC 4Y CAGR Ratio",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "cagr",
+              "code": "((pow(ETH.PriceUSD/ETH.PriceUSD.shift(4*365), 1/4) - 1)\n/\n(pow(BTC.PriceUSD/BTC.PriceUSD.shift(4*365), 1/4) - 1))\n.slice(ETH.PriceUSD.start+(4*365), ETH.PriceUSD.end)",
+              "color": "#e6194b",
+              "displayMode": "none"
+            },
+            {
+              "name": "ETH 4Y Outperform",
+              "code": "cagr.map(fn(date, cagr)(if cagr > 1 then cagr else 1))",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC 4Y Outperform",
+              "code": "cagr.map(fn(date, cagr)(if cagr < 1 then cagr else 1))",
+              "color": "#e8601c",
+              "displayMode": "left"
+            },
+            {
+              "name": "Equal Performance Line",
+              "code": "BTC.PriceBTC.slice(ETH.PriceUSD.start+(4*365), ETH.PriceUSD.end)",
+              "color": "#795547",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
