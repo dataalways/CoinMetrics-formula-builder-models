@@ -1,0 +1,28 @@
+{
+  "kind": "fb",
+  "name": "ETH: 2021 Cumulative transaction fees",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "stack",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "ETH Cumulative Transaction Fees [USD]",
+              "code": "(runningTotal(ETH.FeeTotUSD).slice(date(2021,1,1), date(2022,1,1))-runningTotal(ETH.FeeTotUSD).at(date(2021,1,1)))/(9.94687*pow(10,9))",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
