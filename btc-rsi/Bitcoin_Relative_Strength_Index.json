@@ -1,0 +1,68 @@
+{
+  "kind": "fb",
+  "name": "Bitcoin: Relative Strength Index",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1593993600000,
+          1635292800000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "rsi",
+              "code": "rsi(BTC.PriceUSD, 14)",
+              "color": "#4eb265",
+              "displayMode": "none"
+            },
+            {
+              "name": "RSI-14",
+              "code": "rsi",
+              "color": "#ffe119",
+              "displayMode": "left"
+            },
+            {
+              "name": "RSI < 20",
+              "code": "rsi.map(fn(date, rsi)(if rsi < 20 then rsi else 20))",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "RSI > 80",
+              "code": "rsi.map(fn(date, rsi)(if rsi > 80 then rsi else 80))",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC / USD [RHS]",
+              "code": "BTC.PriceUSD",
+              "color": "#4363d8",
+              "displayMode": "right"
+            },
+            {
+              "name": "Formula_6",
+              "code": "drawSeries(20*BTC.PriceBTC, \" \", \"black\", \"left\")",
+              "color": "#f032e6",
+              "displayMode": "left"
+            },
+            {
+              "name": "Formula_7",
+              "code": "drawSeries(80*BTC.PriceBTC, \" \", \"black\", \"left\")",
+              "color": "#bfef45",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
