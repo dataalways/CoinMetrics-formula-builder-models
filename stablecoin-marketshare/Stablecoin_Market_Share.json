@@ -1,0 +1,68 @@
+{
+  "kind": "fb",
+  "name": "Stablecoin Market Share",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1543795200000,
+          1657843200000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "StableCap",
+              "code": "USDT_ETH.CapMrktCurUSD + USDT_TRX.CapMrktCurUSD + USDC.CapMrktCurUSD",
+              "color": "#e6194b",
+              "displayMode": "none"
+            },
+            {
+              "name": "BtcEthCap",
+              "code": "BTC.CapMrktCurUSD + ETH.CapMrktCurUSD",
+              "color": "#4eb265",
+              "displayMode": "none"
+            },
+            {
+              "name": "StableShare",
+              "code": "StableCap/(BtcEthCap+StableCap)",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "trend",
+              "code": "trendFit((StableShare), date(2019, 1, 1), BTC.PriceUSD.end)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "Formula_2",
+              "code": "trend+0.02",
+              "color": "#795547",
+              "displayMode": "left"
+            },
+            {
+              "name": "Formula_3",
+              "code": "trend+(-0.02)",
+              "color": "#795547",
+              "displayMode": "left"
+            },
+            {
+              "name": "Formula_4",
+              "code": "BTC.PriceUSD",
+              "color": "#4eb265",
+              "displayMode": "right"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

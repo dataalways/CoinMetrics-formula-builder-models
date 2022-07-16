@@ -1,0 +1,56 @@
+{
+  "kind": "fb",
+  "name": "Bitcoin: RSI-1000",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1350604800000,
+          1657843200000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "rsi",
+              "code": "rsi(BTC.PriceUSD, 1000)",
+              "color": "#4eb265",
+              "displayMode": "none"
+            },
+            {
+              "name": "RSI-1000 < 50",
+              "code": "rsi.map(fn(date, rsi)(if rsi < 50 then rsi else 50))",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "RSI-1000 > 50",
+              "code": "rsi.map(fn(date, rsi)(if rsi > 50 then rsi else 50))",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "log10(BTC / USD) [RHS]",
+              "code": "log(BTC.PriceUSD)/log(10)",
+              "color": "#4363d8",
+              "displayMode": "right"
+            },
+            {
+              "name": "Formula_6",
+              "code": "drawSeries(50*BTC.PriceBTC, \" \", \"black\", \"left\")",
+              "color": "#f032e6",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
