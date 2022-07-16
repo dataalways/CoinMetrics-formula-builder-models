@@ -11,4 +11,4 @@ The online UX for downloading individual files is not really ideal, if you don't
 
 ## Author
 
-T from [dataalways.substack.com](dataalways.substack.com)
+- [T](https://twitter.com/Data_Always) from [dataalways.substack.com](https://dataalways.substack.com)
