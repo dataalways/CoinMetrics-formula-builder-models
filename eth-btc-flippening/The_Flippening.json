@@ -1,0 +1,56 @@
+{
+  "kind": "fb",
+  "name": "The Flippening",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1440201600000,
+          1657670400000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "ETH / BTC Marketcap",
+              "code": "drawSeries(ETH.CapMrktCurUSD/BTC.CapMrktCurUSD, \"ETH / BTC Marketcap \", \"black\", \"left\")",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "Flippening",
+              "code": "BTC.PriceBTC",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "1/2 Value",
+              "code": "BTC.PriceBTC*0.5",
+              "color": "#25c6da",
+              "displayMode": "left"
+            },
+            {
+              "name": "1/4 Value",
+              "code": "BTC.PriceBTC*0.25",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "1/8 Value",
+              "code": "BTC.PriceBTC*0.125",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
