@@ -1,0 +1,38 @@
+{
+  "kind": "fb",
+  "name": "ETH/BTC: Relative NVT",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1571011200000,
+          1657929600000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "ETH/BTC NVT90",
+              "code": "ETH.NVTAdjFF90 / BTC.NVTAdjFF90",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "ETH/BTC Price",
+              "code": "ETH.PriceBTC",
+              "color": "#4363d8",
+              "displayMode": "right"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
