@@ -1,0 +1,46 @@
+{
+  "kind": "fb",
+  "name": "ETH:  Standard Deviation of Mining Rewards",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "stack",
+        "movingAvg": 30,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "dSupply",
+              "code": "(ETH.SplyCur - ETH.SplyCur.shift(1))",
+              "color": "#4363d8",
+              "displayMode": "none"
+            },
+            {
+              "name": "eip1559",
+              "code": "(ETH.IssContNtv - dSupply).slice(date(2020,8,1), ETH.IssContNtv.end)",
+              "color": "#25c6da",
+              "displayMode": "none"
+            },
+            {
+              "name": "90-Day Standard Deviation of Mining Rewards",
+              "code": "rollingStandardDeviation(ETH.IssContNtv + ETH.FeeTotNtv - eip1559, 90)",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "Rewards without EIP-1559",
+              "code": "rollingStandardDeviation(ETH.IssContNtv + ETH.FeeTotNtv, 90) - rollingStandardDeviation(ETH.IssContNtv + ETH.FeeTotNtv - eip1559, 90)",
+              "color": "#e8601c",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
