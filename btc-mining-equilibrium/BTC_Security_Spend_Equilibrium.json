@@ -1,0 +1,44 @@
+{
+  "kind": "fb",
+  "name": "BTC: Security Spend Equilibrium",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 14,
+        "interpolationType": 0,
+        "zoomRange": [
+          1415145600000,
+          1658016000000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "BTC/USD 4Y CAGR",
+              "code": "pow(BTC.PriceUSD/BTC.PriceUSD.shift(1460), 0.25).slice(BTC.PriceUSD.start+1460, BTC.PriceUSD.end) - BTC.PriceBTC",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "1 ÷ (Miner Revenue 4Y CAGR)",
+              "code": "pow(BTC.RevNtv.shift(1460)/BTC.RevNtv, 0.25).slice(BTC.RevNtv.start+1460, BTC.RevNtv.end) - BTC.PriceBTC",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC / USD [RHS]",
+              "code": "BTC.PriceUSD",
+              "color": "#795547",
+              "displayMode": "none"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
