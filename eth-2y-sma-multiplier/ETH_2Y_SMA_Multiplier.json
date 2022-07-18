@@ -1,0 +1,40 @@
+{
+  "kind": "fb",
+  "name": "ETH: 2Y SMA Multiplier",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "ETHUSD",
+              "code": "ETH.PriceUSD",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "Buy Zone",
+              "code": "sma(ETHUSD, 730)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "Sell Zone",
+              "code": "sma(ETHUSD, 730)*5",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
