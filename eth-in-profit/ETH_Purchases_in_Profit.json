@@ -1,0 +1,52 @@
+{
+  "kind": "fb",
+  "name": "ETH: Purchases in Profit",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "stack",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "ethusd",
+              "code": "ETH.PriceUSD.slice(ETH.PriceUSD.start, ETH.PriceUSD.end)",
+              "color": "#e6194b",
+              "displayMode": "none"
+            },
+            {
+              "name": "ethfinal",
+              "code": "ETH.PriceUSD.slice(ETH.PriceUSD.end, ETH.PriceUSD.end)",
+              "color": "#bfef45",
+              "displayMode": "none"
+            },
+            {
+              "name": "In Profit",
+              "code": "ethusd.map(fn(date, val)(if val < ethfinal.at(ethfinal.end) then val else 0))",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "In Loss",
+              "code": "ethusd.map(fn(date, val)(if val > ethfinal.at(ethfinal.end) then val else 0))",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC / USD",
+              "code": "0*BTC.PriceBTC.slice(ETH.PriceUSD.start, ETH.PriceUSD.end)",
+              "color": "#4363d8",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

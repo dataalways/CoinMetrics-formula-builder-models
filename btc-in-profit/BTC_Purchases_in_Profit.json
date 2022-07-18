@@ -1,0 +1,52 @@
+{
+  "kind": "fb",
+  "name": "BTC: Purchases in Profit",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "stack",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "btcusd",
+              "code": "BTC.PriceUSD.slice(BTC.PriceUSD.start, BTC.PriceUSD.end)",
+              "color": "#e6194b",
+              "displayMode": "none"
+            },
+            {
+              "name": "btcfinal",
+              "code": "BTC.PriceUSD.slice(BTC.PriceUSD.end, BTC.PriceUSD.end)",
+              "color": "#bfef45",
+              "displayMode": "none"
+            },
+            {
+              "name": "In Profit",
+              "code": "btcusd.map(fn(date, val)(if val < btcfinal.at(btcfinal.end) then val else 0))",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "In Loss",
+              "code": "btcusd.map(fn(date, val)(if val > btcfinal.at(btcfinal.end) then val else 0))",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC / USD",
+              "code": "0*BTC.PriceBTC.slice(BTC.PriceUSD.start, BTC.PriceUSD.end)",
+              "color": "#4363d8",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
