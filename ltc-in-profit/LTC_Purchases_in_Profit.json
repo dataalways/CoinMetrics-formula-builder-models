@@ -1,0 +1,52 @@
+{
+  "kind": "fb",
+  "name": "LTC: Purchases in Profit",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "stack",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "coinprice",
+              "code": "LTC.PriceUSD.slice(LTC.PriceUSD.start, LTC.PriceUSD.end)",
+              "color": "#e6194b",
+              "displayMode": "none"
+            },
+            {
+              "name": "pricefinal",
+              "code": "LTC.PriceUSD.slice(LTC.PriceUSD.end, LTC.PriceUSD.end)",
+              "color": "#bfef45",
+              "displayMode": "none"
+            },
+            {
+              "name": "In Profit",
+              "code": "coinprice.map(fn(date, val)(if val < pricefinal.at(pricefinal.end) then val else 0))",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "In Loss",
+              "code": "coinprice.map(fn(date, val)(if val > pricefinal.at(pricefinal.end) then val else 0))",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "LTC / USD",
+              "code": "0*BTC.PriceBTC.slice(LTC.PriceUSD.start, LTC.PriceUSD.end)",
+              "color": "#4363d8",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

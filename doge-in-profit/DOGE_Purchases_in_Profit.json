@@ -1,0 +1,52 @@
+{
+  "kind": "fb",
+  "name": "DOGE: Purchases in Profit",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "stack",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "dogeusd",
+              "code": "DOGE.PriceUSD.slice(DOGE.PriceUSD.start, DOGE.PriceUSD.end)",
+              "color": "#e6194b",
+              "displayMode": "none"
+            },
+            {
+              "name": "dogefinal",
+              "code": "DOGE.PriceUSD.slice(DOGE.PriceUSD.end, DOGE.PriceUSD.end)",
+              "color": "#bfef45",
+              "displayMode": "none"
+            },
+            {
+              "name": "In Profit",
+              "code": "dogeusd.map(fn(date, val)(if val < dogefinal.at(dogefinal.end) then val else 0))",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "In Loss",
+              "code": "dogeusd.map(fn(date, val)(if val > dogefinal.at(dogefinal.end) then val else 0))",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "DOGE / USD",
+              "code": "0*BTC.PriceBTC.slice(DOGE.PriceUSD.start, DOGE.PriceUSD.end)",
+              "color": "#4363d8",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
