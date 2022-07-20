@@ -1,0 +1,38 @@
+{
+  "kind": "fb",
+  "name": "Bitcoin: NVT-180",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 1,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1320105600000,
+          1658188800000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "NVT-180 [LHS]",
+              "code": "sma(BTC.NVTAdj, 180)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC / USD Denominated Closing Price [RHS]",
+              "code": "BTC.PriceUSD",
+              "color": "#4363d8",
+              "displayMode": "right"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
