@@ -1,0 +1,44 @@
+{
+  "kind": "fb",
+  "name": "ETH: Realized Cap Impulse",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1635638400000,
+          1658448000000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "30D RC Impulse [LHS]",
+              "code": "ETH.CapRealUSD- sma(ETH.CapRealUSD,30)",
+              "color": "#4eb265",
+              "displayMode": "left"
+            },
+            {
+              "name": "90D RC Impulse [LHS]",
+              "code": "ETH.CapRealUSD- sma(ETH.CapRealUSD,90)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "ETH / USD [RHS]",
+              "code": "ETH.PriceUSD",
+              "color": "#4363d8",
+              "displayMode": "right"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
