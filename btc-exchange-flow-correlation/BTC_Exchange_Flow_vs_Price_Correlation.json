@@ -1,0 +1,38 @@
+{
+  "kind": "fb",
+  "name": "BTC: Exchange Flow vs Price Correlation",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1592697600000,
+          1658966400000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "90d Price vs. Exchange Flow Correlation [LHS]",
+              "code": "rollingPearsonCorrelation(logReturns(BTC.PriceUSD), BTC.FlowInExNtv - BTC.FlowOutExNtv, 90)",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "BTC / USD [RHS]",
+              "code": "BTC.PriceUSD",
+              "color": "#4eb265",
+              "displayMode": "right"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
