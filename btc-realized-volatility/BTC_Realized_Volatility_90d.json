@@ -1,0 +1,28 @@
+{
+  "kind": "fb",
+  "name": "BTC: Realized Volatility 90d",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "BTC 90d Volatility",
+              "code": "rollingStandardDeviation(logReturns(BTC.PriceUSD), 90)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
