@@ -1,0 +1,50 @@
+{
+  "kind": "fb",
+  "name": "Realized Volatility",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1640476800000,
+          1660867200000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "BTC 30d [LHS]",
+              "code": "BTC.VtyDayRet30d",
+              "color": "#e6194b",
+              "displayMode": "left"
+            },
+            {
+              "name": "ETH 30d [RHS]",
+              "code": "ETH.VtyDayRet30d",
+              "color": "#4363d8",
+              "displayMode": "right"
+            },
+            {
+              "name": "Formula_31",
+              "code": "0*BTC.PriceBTC",
+              "color": "#019688",
+              "displayMode": "left"
+            },
+            {
+              "name": "Formula_4",
+              "code": "0*BTC.PriceBTC",
+              "color": "#b869c5",
+              "displayMode": "right"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

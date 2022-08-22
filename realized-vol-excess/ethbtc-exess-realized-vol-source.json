@@ -1,0 +1,62 @@
+{
+  "kind": "fb",
+  "name": "ETH / BTC Excess Realized Volatility",
+  "content": {
+    "version": 6,
+    "config": {},
+    "extra": {
+      "chartOptions": {
+        "chartType": "line",
+        "scaleType": 0,
+        "stackMode": "none",
+        "movingAvg": 0,
+        "interpolationType": 0,
+        "zoomRange": [
+          1544140800000,
+          1660780800000
+        ],
+        "data": {
+          "type": "formula",
+          "initialData": [
+            {
+              "name": "btcvol180",
+              "code": "rollingStandardDeviation(logReturns(BTC.PriceUSD), 180)",
+              "color": "#4363d8",
+              "displayMode": "none"
+            },
+            {
+              "name": "btcvol90",
+              "code": "rollingStandardDeviation(logReturns(BTC.PriceUSD), 90)",
+              "color": "#25c6da",
+              "displayMode": "none"
+            },
+            {
+              "name": "ethvol180",
+              "code": "rollingStandardDeviation(logReturns(ETH.PriceUSD), 180)",
+              "color": "#9c28b1",
+              "displayMode": "none"
+            },
+            {
+              "name": "ethvol90",
+              "code": "rollingStandardDeviation(logReturns(ETH.PriceUSD), 90)",
+              "color": "#f032e6",
+              "displayMode": "none"
+            },
+            {
+              "name": "90d (ETH Vol ÷ BTC Vol - 1)",
+              "code": "(ethvol90/btcvol90 - 1).slice(ETH.PriceBTC.start + 91, ETH.PriceBTC.end - 1)",
+              "color": "#4363d8",
+              "displayMode": "left"
+            },
+            {
+              "name": "180d (ETH Vol ÷ BTC Vol - 1)",
+              "code": "(ethvol180/btcvol180 - 1).slice(ETH.PriceBTC.start + 181, ETH.PriceBTC.end - 1)",
+              "color": "#e6194b",
+              "displayMode": "left"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
