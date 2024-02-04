@@ -2,7 +2,7 @@
 
 This repository contains a collection of JSON files designed to create figures in the [CoinMetrics online formula builder](https://charts.coinmetrics.io/formulas/). An example output is included below. 
 
-![BTC-Fee-Cycle](./btc-halving-cycle-fee-revenue/Halving_cycle_fee_revenue_percent-annotated.png)
+![BTC-Fee-Cycle](./Bitcoin/btc-halving-cycle-fee-revenue/Halving_cycle_fee_revenue_percent-annotated.png)
 
 ## Downloading JSON files from GitHub
 
@@ -11,4 +11,4 @@ The online UX for downloading individual files is not really ideal, if you don't
 
 ## Author
 
-- [T](https://twitter.com/Data_Always) from [dataalways.substack.com](https://dataalways.substack.com)
+[Tripoli](https://twitter.com/Data_Always) from [dataalways.substack.com](https://dataalways.substack.com)
